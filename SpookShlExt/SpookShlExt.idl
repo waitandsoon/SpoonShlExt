@@ -1,0 +1,33 @@
+// SpookShlExt.idl : IDL source for SpookShlExt
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SpookShlExt.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(E089A475-2A3C-4AFB-B238-9E1AAA8509AE),
+	pointer_default(unique)
+]
+interface ISpookShlExt : IUnknown{
+	[] HRESULT TestMethod(void);
+};
+[
+	uuid(C49B421C-E717-4722-8AA5-420640D7BFF8),
+	version(1.0),
+]
+library SpookShlExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(DFA87FB0-45C6-48C5-896E-591DF0CAEDB7)		
+	]
+	coclass SpookShlExt
+	{
+		[default] interface ISpookShlExt;
+	};
+};
+

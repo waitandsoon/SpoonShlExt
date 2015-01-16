@@ -1,0 +1,41 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {DFA87FB0-45C6-48C5-896E-591DF0CAEDB7} = s 'SpookShlExt Class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{C49B421C-E717-4722-8AA5-420640D7BFF8}'
+			Version = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Windows
+			{
+				NoRemove CurrentVersion
+				{
+					NoRemove Explorer
+					{
+						NoRemove ShellIconOverlayIdentifiers
+						{
+							ForceRemove SpookShlExtIcon = s '{DFA87FB0-45C6-48C5-896E-591DF0CAEDB7}'
+							{
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
